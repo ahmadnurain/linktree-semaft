@@ -1,0 +1,15 @@
+/* Add this to your global CSS or Tailwind's config */
+@keyframes glassEffect {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+a:hover span {
+  animation: glassEffect 1s ease-in-out forwards;
+  background-size: 200% 100%;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 25%, transparent 50%, rgba(255, 255, 255, 0.3) 75%);
+}
