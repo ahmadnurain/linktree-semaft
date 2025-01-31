@@ -65,7 +65,7 @@ const LinkTree = () => {
           onClick={() => setIsModalOpen(true)}
         >
           <MdGroups className="text-xl" />
-          <span className="absolute inset-0 flex items-center justify-center">
+          <span className="absolute inset-0 flex items-center justify-center lg:text-base md:text-base text-sm">
             Struktural Senat Mahasiwa <br className="block lg:hidden md:hidden" />
             Fakultas Teknik
           </span>
