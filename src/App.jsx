@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import Social from "./components/Social";
-import { MdOutlineMail } from "react-icons/md";
+import { MdOutlineMail, MdGroups } from "react-icons/md";
 import { FaWpforms } from "react-icons/fa";
-
+import { useState } from "react";
 import "./App.css";
 
 const LinkTree = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="flex flex-col items-center min-h-screen p-4 py-14 bg-[url('/modern-banner-with-3d-flow-shape-gradient-fluid-wave-background_331749-573.jpg')] bg-cover bg-center">
       {/* Profile Section */}
@@ -46,7 +47,7 @@ const LinkTree = () => {
         <motion.a
           href="mailto:semaft@unma.ac.id"
           className="mt-6 relative overflow-hidden bg-black bg-opacity-50 text-white py-3 px-6 rounded-lg w-full font-medium flex items-center justify-between"
-          initial={{ opacity: 0, x: -100 }}
+          initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
@@ -55,13 +56,44 @@ const LinkTree = () => {
           <span className="absolute inset-0 flex items-center justify-center">Email</span>
         </motion.a>
 
+        {/* Button to Open Modal */}
+        <motion.button
+          className="mt-6 relative overflow-hidden bg-black bg-opacity-50 text-white lg:py-3 md:py-3 py-6 px-6 rounded-lg w-full font-medium flex items-center justify-between cursor-pointer"
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.7 }}
+          onClick={() => setIsModalOpen(true)}
+        >
+          <MdGroups className="text-xl" />
+          <span className="absolute inset-0 flex items-center justify-center">
+            Struktural Senat Mahasiwa <br className="block lg:hidden md:hidden" />
+            Fakultas Teknik
+          </span>
+        </motion.button>
+
+        {/* Modal */}
+        {isModalOpen && (
+          <motion.div className="fixed inset-0 backdrop-blur-lg bg-opacity-50 flex justify-center items-center p-4 z-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <motion.div className="bg-white rounded-lg overflow-hidden shadow-lg p-6 max-w-lg w-full relative" initial={{ scale: 0.8 }} animate={{ scale: 1 }} transition={{ duration: 0.3 }}>
+              {/* Image */}
+              <img src="/Stuktural SEMA.png" alt="Aspirasi Mahasiswa" className="w-full rounded-lg" />
+
+              {/* Close Button - Positioned Below Image */}
+              <div className="flex justify-center mt-4">
+                <button className="relative overflow-hidden bg-black bg-opacity-50 text-white lg:py-5 md:py-5 py-6 px-6 rounded-lg w-full font-medium flex items-center cursor-pointer" onClick={() => setIsModalOpen(false)}>
+                  <span className="absolute inset-0 flex items-center justify-center">Close</span>
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
         <motion.a
           href="https://docs.google.com/forms/d/e/1FAIpQLScuOfKDK57v9Z2GO1zw9UgrT0Gej0uqUaYOHUz_7pVrfUr3Ag/viewform?usp=sf_link"
           target="_blank"
           className="mt-6 relative overflow-hidden bg-black bg-opacity-50 text-white lg:py-3 md:py-3 py-6 px-6 rounded-lg w-full font-medium flex items-center justify-between"
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.7 }}
+          transition={{ duration: 1, delay: 0.9 }}
         >
           <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent transition-all duration-300 ease-in-out transform scale-x-0 hover:scale-x-100 hover:translate-x-0 hover:animate-glass-effect"></span>
           <FaWpforms className="text-xl" />
