@@ -20,14 +20,14 @@ export default function HolidayPopup() {
           }
 
           const data = await response.json();
-          console.log("Data hari libur:", data); // Debugging log
+          //   console.log("Data hari libur:", data); // Debugging log
 
           const today = new Date().toISOString().split("T")[0]; // Mendapatkan tanggal hari ini dalam format YYYY-MM-DD
-          console.log("Tanggal hari ini:", today);
+          //   console.log("Tanggal hari ini:", today);
 
           // Cari hari libur yang sesuai dengan tanggal yang diformat
           const todayHoliday = data.find((item) => item.tanggal === today);
-          console.log("Hari libur hari ini:", todayHoliday);
+          //   console.log("Hari libur hari ini:", todayHoliday);
 
           if (todayHoliday) {
             // Ambil hanya tanggal, keterangan, dan is_cuti
