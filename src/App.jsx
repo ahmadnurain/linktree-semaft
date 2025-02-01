@@ -3,6 +3,7 @@ import Social from "./components/Social";
 import { MdOutlineMail, MdGroups } from "react-icons/md";
 import { FaWpforms } from "react-icons/fa";
 import { useState } from "react";
+import HolidaysPopup from "./components/PopupHarilibur";
 import "./App.css";
 
 const LinkTree = () => {
@@ -10,6 +11,7 @@ const LinkTree = () => {
   return (
     <div className="flex flex-col items-center min-h-screen p-4 py-14 bg-[url('/modern-banner-with-3d-flow-shape-gradient-fluid-wave-background_331749-573.jpg')] bg-cover bg-center">
       {/* Profile Section */}
+      <HolidaysPopup />
       <motion.div className="bg-white rounded-xl shadow-lg p-6 text-center w-full max-w-lg" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
         <img src="/LOGO KABINET.png" alt="Profile" className="w-32 h-32 rounded-full mx-auto" />
         <motion.h1
