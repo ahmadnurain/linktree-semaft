@@ -4,6 +4,7 @@ import { MdOutlineMail, MdGroups } from "react-icons/md";
 import { FaWpforms } from "react-icons/fa";
 import { useState } from "react";
 import HolidaysPopup from "./components/PopupHarilibur";
+import Volunteer from "./components/ButtonVolunteer";
 import "./App.css";
 
 const LinkTree = () => {
@@ -104,6 +105,7 @@ const LinkTree = () => {
             Fakultas Teknik Unma
           </span>
         </motion.a>
+        <Volunteer />
       </motion.div>
     </div>
   );
