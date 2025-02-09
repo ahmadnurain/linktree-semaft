@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaWpforms } from "react-icons/fa";
+import { FaClipboardUser } from "react-icons/fa6";
 
 const VolunteerButton = () => {
   const [showButton, setShowButton] = useState(false);
@@ -31,8 +31,8 @@ const VolunteerButton = () => {
       transition={{ duration: 1, delay: 0.9 }}
     >
       <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent transition-all duration-300 ease-in-out transform scale-x-0 hover:scale-x-100 hover:translate-x-0 hover:animate-glass-effect"></span>
-      <FaWpforms className="text-xl" />
-      <span className="absolute inset-0 flex items-center justify-center">
+      <FaClipboardUser className="text-xl" />
+      <span className="absolute inset-0 flex items-center justify-center lg:text-base md:text-base text-sm">
         Form Pendaftaran Volunteer <br className="block lg:hidden md:hidden" />
         Senat Mahasiswa
       </span>
