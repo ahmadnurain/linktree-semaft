@@ -9,7 +9,7 @@ const VolunteerButton = () => {
     const checkTime = () => {
       const now = new Date();
       const startDate = new Date("2025-02-09T17:00:00"); // Mulai tampil 9 Feb 2025, 17:00
-      const endDate = new Date("2025-02-10T00:00:00"); // Hilang 10 Feb 2025, 00:00
+      const endDate = new Date("2025-02-20T00:00:00"); // Hilang 10 Feb 2025, 00:00
 
       setShowButton(now >= startDate && now <= endDate);
     };
